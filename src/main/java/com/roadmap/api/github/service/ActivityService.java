@@ -26,7 +26,7 @@ public class ActivityService {
         }
 
         return Arrays.stream(activitiesArray)
-                //.distinct()
+                .filter(a -> a.getType() != null) // delete untracked types
                 .toList();
     }
 }
