@@ -1,8 +1,12 @@
 package com.roadmap.api.github.service;
 
+import com.roadmap.api.github.model.Activity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 public class ActivityService {
@@ -14,7 +18,15 @@ public class ActivityService {
         this.restTemplate = restTemplate;
     }
 
-    public String getActivity() {
-        return restTemplate.getForObject(URL + "Garyn14/events", String.class);
+    public List<Activity> getActivity() {
+        Activity[] activitiesArray = restTemplate.getForObject(URL + "kamranahmedse/events", Activity[].class);
+
+        if (activitiesArray == null) {
+            return Collections.emptyList();
+        }
+
+        return Arrays.stream(activitiesArray)
+                //.distinct()
+                .toList();
     }
 }
