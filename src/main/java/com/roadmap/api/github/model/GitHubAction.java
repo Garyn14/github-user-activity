@@ -10,15 +10,14 @@ import lombok.Setter;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.PROPERTY,
         property = "type",
         defaultImpl = UnsupportedGitHubEvent.class
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = WatchEvent.class, name = "WatchEvent"),
 })
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Getter @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class GitHubAction {
     private Repository repo;
 
@@ -31,7 +30,7 @@ public abstract class GitHubAction {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     @Getter @Setter
-    private static class Repository {
+    public static class Repository {
         private String name;
 
         @Override

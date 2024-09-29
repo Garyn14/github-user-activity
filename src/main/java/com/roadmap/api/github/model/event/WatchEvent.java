@@ -13,20 +13,12 @@ public class WatchEvent extends GitHubAction {
 
     @Override
     public String toString() {
-        return super.toString()  + "WatchEvent{"+
-                "payload=" + payload +
-                '}';
+        return "Starred " + this.getRepo().getName();
     }
 
     @Getter @Setter
+    @JsonIgnoreProperties(ignoreUnknown = true)
     private static class Payload {
         private String action;
-
-        @Override
-        public String toString() {
-            return "Payload{" +
-                    "action='" + action + '\'' +
-                    '}';
-        }
     }
 }
