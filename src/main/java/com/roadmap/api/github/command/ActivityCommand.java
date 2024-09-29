@@ -20,7 +20,11 @@ public class ActivityCommand {
 
     @ShellMethod(key = "activity", value = "Activity Service")
     public List<Activity> getActivity() {
-        return activityService.getActivity();
+        return activityService.getActivities();
+        /*List<String> response = new ArrayList<>();
+        activityService
+                .getActivity()
+                .forEach(a -> response.add("- Starred "));*/
     }
 
 }

@@ -10,12 +10,17 @@ import lombok.Setter;
 @Getter @Setter
 @EqualsAndHashCode
 public class Activity {
+
     private GitHubEventType type;
+    private Repository repo;
+    private Payload payload;
 
     @Override
     public String toString() {
         return "Activity{" +
                 "type='" + type + '\'' +
+                ", repo=" + repo +
+                ", payload=" + payload +
                 '}';
     }
 }

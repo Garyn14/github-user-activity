@@ -18,7 +18,7 @@ public class ActivityService {
         this.restTemplate = restTemplate;
     }
 
-    public List<Activity> getActivity() {
+    public List<Activity> getActivities() {
         Activity[] activitiesArray = restTemplate.getForObject(URL + "kamranahmedse/events", Activity[].class);
 
         if (activitiesArray == null) {
@@ -26,7 +26,7 @@ public class ActivityService {
         }
 
         return Arrays.stream(activitiesArray)
-                .filter(a -> a.getType() != null) // delete untracked types
+                //.filter(a -> a.getType() != null)  avoid untracked types
                 .toList();
     }
 }
