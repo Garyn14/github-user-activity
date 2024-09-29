@@ -1,6 +1,6 @@
 package com.roadmap.api.github.command;
 
-import com.roadmap.api.github.model.Activity;
+import com.roadmap.api.github.model.GitHubAction;
 import com.roadmap.api.github.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -19,12 +19,8 @@ public class ActivityCommand {
     }
 
     @ShellMethod(key = "activity", value = "Activity Service")
-    public List<Activity> getActivity() {
+    public List<GitHubAction> getActivity() throws Exception {
         return activityService.getActivities();
-        /*List<String> response = new ArrayList<>();
-        activityService
-                .getActivity()
-                .forEach(a -> response.add("- Starred "));*/
     }
 
 }

@@ -4,12 +4,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum GitHubEventType {
-    WATCH_EVENT("WatchEvent");
+    WATCH_EVENT("WatchEvent"),
+    PUSH_EVENT("PushEvent");
     /*
     PULL_REQUEST_EVENT("PullRequestEvent"),
     ISSUES_EVENT("IssuesEvent"),
     FORK_EVENT("ForkEvent"),
-    PUSH_EVENT("PushEvent"),
+    ,
     COMMIT_COMMENT_EVENT("CommitCommentEvent"),
     CREATE_EVENT("CreateEvent"),
     DELETE_EVENT("DeleteEvent"),
