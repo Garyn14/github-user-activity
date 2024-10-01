@@ -35,6 +35,8 @@ The application should run from the command line, accept the GitHub username as 
 
 If you are looking to build a more advanced version of this project, you can consider adding features like filtering the activity by event type, displaying the activity in a more structured format, or caching the fetched data to improve performance. You can also explore other endpoints of the GitHub API to fetch additional information about the user or their repositories.
 
+the instruction was created by [roadmap.sh](https://roadmap.sh/projects/github-user-activity)
+
 # Solution
 
 This project is built using **Java**, **Spring Boot**, **Spring Shell**, and **RestTemplate**. The command-line interface (CLI) allows users to fetch recent activity from any GitHub account by simply providing a username. The project demonstrates how to interact with the GitHub API, process JSON responses, and display the results in a user-friendly format directly in the terminal.
