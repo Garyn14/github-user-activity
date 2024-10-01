@@ -33,4 +33,12 @@ public class ActionServiceImpl implements ActionService {
                 .toList();
     }
 
+    @Override
+    public List<GitHubAction> getActionsWithLimit(String username, int limit) {
+        return getActions(username)
+                .stream()
+                .limit(limit)
+                .toList();
+    }
+
 }

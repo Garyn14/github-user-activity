@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ActionService {
     List<GitHubAction> getActions(String username);
+    List<GitHubAction> getActionsWithLimit(String username, int limit);
 }
