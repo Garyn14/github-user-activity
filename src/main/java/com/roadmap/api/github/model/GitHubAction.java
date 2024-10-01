@@ -17,7 +17,8 @@ import lombok.Setter;
         @JsonSubTypes.Type(value = IssueCommentEvent.class, name = "IssueCommentEvent"),
         @JsonSubTypes.Type(value = PushEvent.class, name = "PushEvent"),
         @JsonSubTypes.Type(value = PullRequestEvent.class, name = "PullRequestEvent"),
-        @JsonSubTypes.Type(value = IssuesEvent.class, name = "IssuesEvent")
+        @JsonSubTypes.Type(value = IssuesEvent.class, name = "IssuesEvent"),
+        @JsonSubTypes.Type(value = CreateEvent.class, name = "CreateEvent")
 })
 @Getter @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)

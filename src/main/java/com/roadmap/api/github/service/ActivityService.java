@@ -35,7 +35,7 @@ public class ActivityService {
                 .toList();*/
 
         GitHubAction[] activitiesArray = restTemplate
-                .getForObject(URL + "kamranahmedse/events", GitHubAction[].class);
+                .getForObject(URL + "Garyn14/events", GitHubAction[].class);
 
         if (activitiesArray == null) {
             return Collections.emptyList();
