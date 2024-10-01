@@ -3,10 +3,7 @@ package com.roadmap.api.github.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.roadmap.api.github.model.event.IssueCommentEvent;
-import com.roadmap.api.github.model.event.PushEvent;
-import com.roadmap.api.github.model.event.UnsupportedGitHubEvent;
-import com.roadmap.api.github.model.event.WatchEvent;
+import com.roadmap.api.github.model.event.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +15,9 @@ import lombok.Setter;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = WatchEvent.class, name = "WatchEvent"),
         @JsonSubTypes.Type(value = IssueCommentEvent.class, name = "IssueCommentEvent"),
-        @JsonSubTypes.Type(value = PushEvent.class, name = "PushEvent")
+        @JsonSubTypes.Type(value = PushEvent.class, name = "PushEvent"),
+        @JsonSubTypes.Type(value = PullRequestEvent.class, name = "PullRequestEvent"),
+        @JsonSubTypes.Type(value = IssuesEvent.class, name = "IssuesEvent")
 })
 @Getter @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
