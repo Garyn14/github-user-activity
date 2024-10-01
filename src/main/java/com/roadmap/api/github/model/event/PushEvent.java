@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PushEvent extends GitHubAction{
     private Payload payload;
 

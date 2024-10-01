@@ -23,25 +23,12 @@ import lombok.Setter;
 @Getter @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class GitHubAction {
-    private Repository repo;
 
-    @Override
-    public String toString() {
-        return "GitHubAction{" +
-                "repo=" + repo +
-                '}';
-    }
+    private Repository repo;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     @Getter @Setter
     public static class Repository {
         private String name;
-
-        @Override
-        public String toString() {
-            return "Repository{" +
-                    "name='" + name + '\'' +
-                    '}';
-        }
     }
 }

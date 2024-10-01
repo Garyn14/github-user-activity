@@ -26,6 +26,7 @@ public class CreateEvent extends GitHubAction {
     }
 
     @Getter @Setter
+    @JsonIgnoreProperties(ignoreUnknown = true)
     private static class Payload {
         private String ref;
         private String ref_type;
